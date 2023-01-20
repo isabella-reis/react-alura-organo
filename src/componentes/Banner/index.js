@@ -1,6 +1,6 @@
-import { BannerContainer } from "./styles/Banner";
+import { BannerContainer } from "./styles";
 
-function Banner() {
+const Banner = () =>{
   return (
     <BannerContainer>
       <img

@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import Banner from './componentes/Banner/Banner'
+import { GlobalStyle } from "./globalStyles";
+import Banner from './componentes/Banner'
+import Form from './componentes/Form'
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyle/>
       <Banner/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         amor e carinho, olá Isabollinhas
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form/>
     </div>
   );
 }
