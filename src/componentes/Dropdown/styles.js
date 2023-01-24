@@ -17,13 +17,11 @@ export const DropdownBox = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    
-    &:hover {
-    cursor: pointer;
-  }
-  }
 
-  
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 
 export const DropdownLabel = styled.label`

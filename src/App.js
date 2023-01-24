@@ -2,6 +2,7 @@ import { GlobalStyle } from "./globalStyles";
 import { useState } from "react";
 import Banner from "./componentes/Banner";
 import Form from "./componentes/Form";
+import Team from "./componentes/Team"
 
 function App() {
   const [collaborators, setCollaborator] = useState([]);
@@ -19,6 +20,13 @@ function App() {
       <GlobalStyle />
       <Banner />
       <Form handleSubmitForm={collaborator => handleAddNewCollaborator(collaborator)} />
+      <Team nome="Programação"/>
+      <Team nome="Front-End"/>
+      <Team nome="Data Science"/>
+      <Team nome="Devops"/>
+      <Team nome="UX e Design"/>
+      <Team nome="Mobile"/>
+      <Team nome="Inovação e Gestão"/>
     </div>
   );
 }
