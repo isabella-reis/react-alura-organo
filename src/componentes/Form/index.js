@@ -5,15 +5,7 @@ import { FormBox, FormTitle } from "./styles";
 import { useState } from "react";
 
 const Form = (props) => {
-  const teams = [
-    "Programação",
-    "Front-End",
-    "Data Science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
+ 
 
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
@@ -49,14 +41,14 @@ const Form = (props) => {
         <Input
           required={true}
           label="Imagem"
-          placeholder="Informe o endereço da imagem"
+          placeholder="Informe o endereço do seu github! PS: nós vamos pegar seu icon :)"
           value={imagem}
-          handleWhenChanged={(value) => setImagem(value)}
+          handleWhenChanged={(value) => setImagem(`${value}.png`)}
         />
         <Dropdown
           required={true}
           label="Time"
-          itens={teams}
+          itens={props.teamsNames}
           value={team}
           handleWhenChanged={(value) => setTeam(value)}
         />

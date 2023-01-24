@@ -1,9 +1,24 @@
+import {
+  CardBox,
+  CardBoxTop,
+  CardBoxBottom,
+  CardName,
+  CardSubtitle,
+} from "./styles";
 
+const Card = (props) => {
+  return (
+    <CardBox>
+      <CardBoxTop>
+        <img src={props.imagem} alt={`Foto de perfil de ${props.nome}`}/>
+      </CardBoxTop>
+      <CardBoxBottom>
+        <CardName>{props.nome}</CardName>
+        <CardSubtitle>{props.cargo}
+        </CardSubtitle>
+      </CardBoxBottom>
+    </CardBox>
+  );
+};
 
-// const Card = () => {
-//     return (
-
-//     )
-// }
-
-// export default Card;
+export default Card;

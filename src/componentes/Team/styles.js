@@ -18,3 +18,10 @@ export const TeamBox = styled.section`
     color: #212121;
   }
 `;
+
+export const CollaboratorsBox = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  flex-wrap: wrap;
+`

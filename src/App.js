@@ -58,11 +58,21 @@ function App() {
       <GlobalStyle />
       <Banner />
       <Form
+      //Elevamos o estado do nosso array teams, mapeamos ele e para cada elemento pegamos somente o nome
+        teamsNames={teams.map(team => team.nome)}
         handleSubmitForm={(collaborator) =>
           handleAddNewCollaborator(collaborator)
         }
       />
-      {teams.map(team => <Team key={team.nome} nome={team.nome} corPrimaria={team.corPrimaria} corSecundaria={team.corSecundaria}/>)}
+      {teams.map((team) => (
+        <Team
+          key={team.nome}
+          nome={team.nome}
+          corPrimaria={team.corPrimaria}
+          corSecundaria={team.corSecundaria}
+          collaborators={collaborators.filter(collaborator => collaborator.team == team.nome)}
+        />
+      ))}
     </div>
   );
 }
@@ -72,4 +82,4 @@ export default App;
 //Criamos o array de objetos com os times e cores, dentro do nosso app nós
 //fazemos o componente Team ser dinâmico .: para cada elemento dentro do array teams
 //nós pegamos o nome e colocamos dentro da props nome do componente, mostrando assim na tela
-//apenas o nome dos times, sem precisar colocar um por um 
+//apenas o nome dos times, sem precisar colocar um por um
