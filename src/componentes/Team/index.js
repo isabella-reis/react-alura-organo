@@ -3,8 +3,8 @@ import Card  from "../Card";
 
 const Team = (props) => {
   return (
-    <TeamBox>
-      <h3>{props.nome}</h3>
+    <TeamBox style={{ backgroundColor: props.corSecundaria }}>
+      <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
     </TeamBox>
   );
 };
