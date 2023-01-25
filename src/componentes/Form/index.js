@@ -16,6 +16,10 @@ const Form = (props) => {
     //Evitar que o comportamento padrão do formulário aconteça (enviar e recarregar a página)
     event.preventDefault();
     props.handleSubmitForm({ nome, cargo, imagem, team });
+    setNome('');
+    setCargo('');
+    setImagem('');
+    setTeam('');
   };
 
   return (
@@ -41,9 +45,9 @@ const Form = (props) => {
         <Input
           required={true}
           label="Imagem"
-          placeholder="Informe o endereço do seu github! PS: nós vamos pegar seu icon :)"
+          placeholder="Informe o endereço da imagem ou seu github com .png no final! (nós vamos pegar seu icon!)"
           value={imagem}
-          handleWhenChanged={(value) => setImagem(`${value}.png`)}
+          handleWhenChanged={(value) => setImagem(value)}
         />
         <Dropdown
           required={true}

@@ -3,19 +3,22 @@ import Card from "../Card";
 
 const Team = (props) => {
   return (
-    <TeamBox style={{ backgroundColor: props.corSecundaria }}>
-      <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
-      <CollaboratorsBox>
-        {props.collaborators.map((collaborator) => (
-          <Card
-            key={collaborator.nome}
-            nome={collaborator.nome}
-            cargo={collaborator.cargo}
-            imagem={collaborator.imagem}
-          />
-        ))}
-      </CollaboratorsBox>
-    </TeamBox>
+    props.collaborators.length > 0 && (
+      <TeamBox style={{ backgroundColor: props.corSecundaria }}>
+        <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+        <CollaboratorsBox>
+          {props.collaborators.map((collaborator) => (
+            <Card
+              backgroundcolor={props.corPrimaria}
+              key={collaborator.nome}
+              nome={collaborator.nome}
+              cargo={collaborator.cargo}
+              imagem={collaborator.imagem}
+            />
+          ))}
+        </CollaboratorsBox>
+      </TeamBox>
+    )
   );
 };
 

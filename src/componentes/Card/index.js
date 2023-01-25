@@ -9,7 +9,7 @@ import {
 const Card = (props) => {
   return (
     <CardBox>
-      <CardBoxTop>
+      <CardBoxTop style={{backgroundColor: props.backgroundcolor}}>
         <img src={props.imagem} alt={`Foto de perfil de ${props.nome}`}/>
       </CardBoxTop>
       <CardBoxBottom>

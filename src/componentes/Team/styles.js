@@ -12,7 +12,8 @@ export const TeamBox = styled.section`
     line-height: 43px;
 
     padding: 8px;
-    border-bottom: 4px solid;
+    border-bottom: 4px solid; 
+    /* TODO: Fazer border bottom ficar igual ao do Figma */
     display: inline-block;
 
     color: #212121;

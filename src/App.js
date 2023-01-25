@@ -3,6 +3,7 @@ import { useState } from "react";
 import Banner from "./componentes/Banner";
 import Form from "./componentes/Form";
 import Team from "./componentes/Team";
+import Footer from "./componentes/Footer";
 
 function App() {
   const teams = [
@@ -46,7 +47,6 @@ function App() {
   const [collaborators, setCollaborator] = useState([]);
 
   const handleAddNewCollaborator = (collaborator) => {
-    console.log(collaborator);
     //Para adicionar um novo colaborador, nós vamos criar um array, pegar todos os colaboradores antigos e adicionar o novo
     //Usamos o set do useState para adicionar um novo colaborador
     // --> estamos usando o spread <--
@@ -58,8 +58,8 @@ function App() {
       <GlobalStyle />
       <Banner />
       <Form
-      //Elevamos o estado do nosso array teams, mapeamos ele e para cada elemento pegamos somente o nome
-        teamsNames={teams.map(team => team.nome)}
+        //Elevamos o estado do nosso array teams, mapeamos ele e para cada elemento pegamos somente o nome
+        teamsNames={teams.map((team) => team.nome)}
         handleSubmitForm={(collaborator) =>
           handleAddNewCollaborator(collaborator)
         }
@@ -70,9 +70,12 @@ function App() {
           nome={team.nome}
           corPrimaria={team.corPrimaria}
           corSecundaria={team.corSecundaria}
-          collaborators={collaborators.filter(collaborator => collaborator.team == team.nome)}
+          collaborators={collaborators.filter(
+            (collaborator) => collaborator.team == team.nome
+          )}
         />
       ))}
+      <Footer />
     </div>
   );
 }
@@ -83,3 +86,5 @@ export default App;
 //fazemos o componente Team ser dinâmico .: para cada elemento dentro do array teams
 //nós pegamos o nome e colocamos dentro da props nome do componente, mostrando assim na tela
 //apenas o nome dos times, sem precisar colocar um por um
+
+// TODO: Adicionar botao que esconda/ mostre o formulário
