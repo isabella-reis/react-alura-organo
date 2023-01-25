@@ -4,6 +4,8 @@ import Banner from "./componentes/Banner";
 import Form from "./componentes/Form";
 import Team from "./componentes/Team";
 import Footer from "./componentes/Footer";
+import Title from "./componentes/Title";
+import ToggleVisibility from "./componentes/ToggleVisibilityButton";
 
 function App() {
   const teams = [
@@ -57,13 +59,17 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Banner />
-      <Form
-        //Elevamos o estado do nosso array teams, mapeamos ele e para cada elemento pegamos somente o nome
-        teamsNames={teams.map((team) => team.nome)}
-        handleSubmitForm={(collaborator) =>
-          handleAddNewCollaborator(collaborator)
-        }
-      />
+      <ToggleVisibility>
+        <Form
+          //Elevamos o estado do nosso array teams, mapeamos ele e para cada elemento pegamos somente o nome
+          teamsNames={teams.map((team) => team.nome)}
+          handleSubmitForm={(collaborator) =>
+            handleAddNewCollaborator(collaborator)
+          }
+        />
+      </ToggleVisibility>
+
+      <Title />
       {teams.map((team) => (
         <Team
           key={team.nome}
@@ -85,6 +91,4 @@ export default App;
 //Criamos o array de objetos com os times e cores, dentro do nosso app nós
 //fazemos o componente Team ser dinâmico .: para cada elemento dentro do array teams
 //nós pegamos o nome e colocamos dentro da props nome do componente, mostrando assim na tela
-//apenas o nome dos times, sem precisar colocar um por um
-
-// TODO: Adicionar botao que esconda/ mostre o formulário
+//apenas o nome dos times, sem precisar colocar um por um.

@@ -13,7 +13,6 @@ export const TeamBox = styled.section`
 
     padding: 8px;
     border-bottom: 4px solid; 
-    /* TODO: Fazer border bottom ficar igual ao do Figma */
     display: inline-block;
 
     color: #212121;
@@ -23,6 +22,5 @@ export const TeamBox = styled.section`
 export const CollaboratorsBox = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 32px;
   flex-wrap: wrap;
 `

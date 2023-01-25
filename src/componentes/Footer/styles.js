@@ -40,6 +40,7 @@ export const FooterBox = styled.footer`
     z-index: 1;
     margin-bottom: 13.02px;
     margin-top: 43px;
+    margin-right: 20px;
 
     width: 111px;
     height: 111px;
